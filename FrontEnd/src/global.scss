@@ -1,0 +1,23 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+
+.rojo span, .rojo .sc-ion-action-sheet-md{
+    color: red !important;
+};
+.azul span, .azul .sc-ion-action-sheet-md{
+    color: blue !important;
+};
+.celeste span, .celeste .sc-ion-action-sheet-md{
+    color: rgb(154, 250, 245) !important;
+}
+
