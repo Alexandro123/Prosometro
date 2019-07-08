@@ -39,14 +39,16 @@ function addPartidoPolitico(req, res){
 }
 
 function deletePartidos(req, res){
-    //var 
-    /*Contacto.findByIdAndDelete(conId, (err, contacElim) => {
+    var partidoId = req.params.id;
+    var body = req.body;
+
+    PartidoPolitico.findByIdAndRemove(partidoId, (err, borrado) => {
         if (err) return res.status(500).send({ message: 'error en la peticion' })
 
-        if (!contacElim) return res.status(404).send({ message: 'no se a podido actualizar los datos del usuario' })
+        if (!borrado) return res.status(404).send({ message: 'no se a podido borrar al partido' })
 
-        return res.status(200).send({ contacto: contacElim })
-    })*/
+        return res.status(200).sen({partidoPolitico: borrado})
+    });
 }
 
 function getPartidos(req, res){
@@ -80,13 +82,16 @@ function uploadImage(req, res){
 
         var file_path = req.files.image.path;
         var file_split = file_path.split('\\');
+        var file_name = file_split[2];
+        
 
     }
 }
 
 module.exports = {
     addPartidoPolitico,
-    getPartidos,
     editPartido,
+    deletePartidos,
+    getPartidos,
     uploadImage
 }
