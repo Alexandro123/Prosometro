@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 //CARGAR RUTAS
 var user_routes = require('./routes/userRoutes');
 var contactos_routes = require('./routes/contactosRoutes');
+var partidoPolitico_routes = require('./routes/partidoPoliticoRoutes');
 
 //MIDDLEWARES
 app.use(bodyParser.urlencoded({ extended: false}));
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 //RUTAS
 app.use('/api', user_routes);
 app.use('/api', contactos_routes);
+app.use('/api', partidoPolitico_routes);
 
 //EXPORTAR
 module.exports = app;

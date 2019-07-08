@@ -17,6 +17,7 @@
     "jwt-simple": "^0.5.5",
     "moment": "^2.24.0",
     "mongoose": "^5.4.6",
+    "mongoose-pagination": "^1.0.0",
     "nodemon": "^1.18.9"
   }
 }
