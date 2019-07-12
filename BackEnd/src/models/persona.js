@@ -7,8 +7,8 @@ var PersonaSchema = Schema({
     name: String,
     image: String,
     puesto: String,
-    //partido: { type: Schema.ObjectId, ref: 'PartidoPolitico' },
-    partido: { type: Schema.name, ref: 'PartidoPolitico' },
+    partido: { type: Schema.ObjectId, ref: 'PartidoPolitico' },
+    //partido: { type: Schema.name, ref: 'PartidoPolitico' },
     paraBuscar: String
 });
 

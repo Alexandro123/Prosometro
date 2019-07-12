@@ -1,5 +1,8 @@
+'use strict'
 
-
+var PartidoPolitico = require('../models/partidoPolitico');
+var path = require('path');
+var fs = require('fs');
 
 function addPartidoPolitico(req, res) {
     var partidoPolitico = new PartidoPolitico();
