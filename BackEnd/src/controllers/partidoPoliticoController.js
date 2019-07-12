@@ -18,9 +18,8 @@ function addPartidoPolitico(req, res) {
 
         partidoPolitico.paraBuscar = '1';
 
-        //usuarios duplicados
         PartidoPolitico.find({ name: body.name }).exec((err, partidos) => {
-            if (err) res.status(500).send({ message: 'error en la peticion de usuarios' });
+            if (err) res.status(500).send({ message: 'error en la peticion de partidos' });
 
             if (partidos && partidos.length >= 1) {
                 return res.status(200).send({ message: 'El partido ya existe' })
