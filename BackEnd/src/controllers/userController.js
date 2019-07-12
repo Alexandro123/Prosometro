@@ -33,6 +33,7 @@ function registrar(req, res){
         user.usuario = params.usuario;
         user.email = params.email;
         user.password = params.password;
+        user.rol = 'USER';  
         user.image = null;
 
         
