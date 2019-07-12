@@ -12,3 +12,4 @@ mongoose.connect('mongodb://localhost:27017/IN6BM', { useNewUrlParser: true }).t
         console.log(`El servidor esta corriendo en el puerto: '${app.get('port')}'`);
     });
 }).catch(err => console.log(err));
+

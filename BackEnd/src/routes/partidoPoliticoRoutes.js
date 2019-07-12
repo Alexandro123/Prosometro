@@ -7,10 +7,13 @@ var api = express.Router();
 var md_auth = require('../middlewares/autheticated');
 
 var multipart = require('connect-multiparty');
-var md_upload = multipart({uploadDir: './uploads/users'})
+var md_upload = multipart({uploadDir: './src/uploads/partidosPoliticos'})
 
 //api.post('/addPartidoPolitico', md_auth.ensureAuth, PartidoPolitico.addPartidoPolitico);
 api.post('/addPartidoPolitico', PartidoPolitico.addPartidoPolitico);
+
+//api.post('/uploadImage/:id', [md_auth.ensureAuth, md_upload], PartidoPolitico.uploadImage);
+api.post('/uploadImage', md_upload, PartidoPolitico.uploadImage);
 
 //api.put('/editPartidos', md_auth.ensureAuth,PartidoPolitico.editPartidos);
 api.put('/editPartido/:id', PartidoPolitico.editPartido);
@@ -18,9 +21,8 @@ api.put('/editPartido/:id', PartidoPolitico.editPartido);
 //api.delete('/deletePartidos/:id', md_auth.ensureAuth, PartidoPolitico.deletePartidos);
 api.delete('/deletePartidos/:id', PartidoPolitico.deletePartidos);
 
-//api.post('/uploadImage/:id', [md_auth.ensureAuth, md_upload], PartidoPolitico.uploadImage);
-api.post('/uploadImage/:id', md_upload, PartidoPolitico.uploadImage);
-
 api.get('/getPartidos', PartidoPolitico.getPartidos);
+
+api.get('/getPartido', PartidoPolitico.getPartido)
 
 module.exports = api;
