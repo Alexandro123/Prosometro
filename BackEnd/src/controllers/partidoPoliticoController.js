@@ -72,7 +72,7 @@ function getPartidos(req, res) {
 }
 
 function getPartido(req, res) {
-    var partidoId = req.body.id;
+    var partidoId = req.params.id;
 
     PartidoPolitico.findById(partidoId, (err, encontrado) => {
         if (err) return res.status(500).send({ message: 'error en la peticion' });

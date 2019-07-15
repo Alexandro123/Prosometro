@@ -8,9 +8,6 @@ var fs = require('fs');
 
 var Contactos = require('../models/contactos');
 
-
-
-
 function getUser(req, res){
 
     User.find().exec((err, usuariosEncontrados)=>{

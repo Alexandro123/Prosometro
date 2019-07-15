@@ -10,6 +10,7 @@ var user_routes = require('./routes/userRoutes');
 var contactos_routes = require('./routes/contactosRoutes');
 var partidoPolitico_routes = require('./routes/partidoPoliticoRoutes');
 var persona_routes = require('./routes/personaRoutes');
+var promesa_routes = require('./routes/promesaRoutes');
 
 //MIDDLEWARES
 app.use(bodyParser.urlencoded({ extended: false}));
@@ -30,6 +31,7 @@ app.use('/api', user_routes);
 app.use('/api', contactos_routes);
 app.use('/api', partidoPolitico_routes);
 app.use('/api', persona_routes);
+app.use('/api', promesa_routes);
 
 //EXPORTAR
 module.exports = app;

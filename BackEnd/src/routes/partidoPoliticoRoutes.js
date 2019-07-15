@@ -23,6 +23,6 @@ api.delete('/deletePartidos/:id', PartidoPolitico.deletePartidos);
 
 api.get('/getPartidos', PartidoPolitico.getPartidos);
 
-api.get('/getPartido', PartidoPolitico.getPartido)
+api.get('/getPartido/:id', PartidoPolitico.getPartido)
 
 module.exports = api;

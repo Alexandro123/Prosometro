@@ -10,10 +10,10 @@ var multipart = require('connect-multiparty');
 var md_upload = multipart({uploadDir: './src/uploads/personas'})
 
 api.post('/addPersona', Persona.addPersona);
-api.post('/uploadImagePersona', md_upload, Persona.uploadImage);
-api.delete('/deletePersona', Persona.deletePersona);
-api.put('/editPersona', Persona.editPersona);
-api.get('/getPersona', Persona.getPersona);
+api.post('/uploadImagePersona/:id', md_upload, Persona.uploadImage);
+api.delete('/deletePersona/:id', Persona.deletePersona);
+api.put('/editPersona/:id', Persona.editPersona);
+api.get('/getPersona/:id', Persona.getPersona);
 api.get('/getPersonas', Persona.getPersonas);
 api.get('/getPersonasPorPartido', Persona.getPesonasPorPartido);
 
