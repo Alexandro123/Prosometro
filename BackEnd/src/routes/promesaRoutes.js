@@ -18,7 +18,8 @@ api.delete('/deletePromesa/:id', Promesa.deletePromesa);
 api.put('/editPromesa/:id', Promesa.editPromesa);
 api.get('/getPromesas', Promesa.getPromesas);
 api.get('/getPromesa/:id', Promesa.getPromesa);
-api.put('/darOpinion', Promesa.darOpinion);
+api.get('/getPromesaPorPersona', Promesa.getPromesaPorPersona);
+api.put('/darOpinion/:id', Promesa.darOpinion);
 
 
 /*api.post('/addPersona', Persona.addPersona);

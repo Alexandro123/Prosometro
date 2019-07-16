@@ -121,7 +121,7 @@ function getPromesaPorPersona(req, res) {
         if (err) return res.status(500).send({ message: 'error en la peticion', err });
 
         if (encontrado) {
-            Promesa.findO({ hechoPor: encontrado.name }, (err, encontrados) => {
+            Promesa.find({ hechoPor: encontrado._id }, (err, encontrados) => {
                 if (err) return res.status(500).send({ message: 'error en la peticion', err });
 
                 if (encontrados.length >= 1) {
@@ -150,7 +150,9 @@ function getPromesaPorPersona(req, res) {
 function darOpinion(req, res) {
     var body = req.body;
     var opinion = body.opinion.toLowerCase();
+    var email = body.email;
     var promesaId = req.params.id;
+    
     //email, opinion, id
     var yaOpino = false;
     var votoFinal = 'votos.' + opinion
@@ -162,7 +164,7 @@ function darOpinion(req, res) {
             if (!encontrado) return res.status(500).send({ message: "error al listar la promesa" });
 
             for (let x = 0; x < encontrado.yaVotaron.length; x++) {
-                if (encontrado.yaVotaron[x] === body.email) {
+                if (encontrado.yaVotaron[x] === email) {
                     yaOpino = true;
                     return res.status(500).send({ message: "el usuario ya opino en esta encuesta" })
                 }
@@ -175,7 +177,7 @@ function darOpinion(req, res) {
                     //actualizado.opinion.usuariosO.push(req.user.sub);
                     //actualizado.save();
                     actualizado.aprobacion = actualizado.votos.si / (actualizado.votos.si + actualizado.votos.no);
-                    actualizado.yaVotaron.push(body.email);
+                    actualizado.yaVotaron.push(email);
                     actualizado.save();
                     return res.status(200).send({ promesa: actualizado })
                 })
@@ -202,5 +204,6 @@ module.exports = {
     editPromesa,
     getPromesas,
     getPromesa,
+    getPromesaPorPersona,
     darOpinion
 }
